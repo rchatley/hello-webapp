@@ -1,6 +1,6 @@
 name: Lint
 
-on: [push]
+on: [ push ]
 
 jobs:
   python-formatting:
@@ -20,3 +20,14 @@ jobs:
 
       - name: Run flake8
         run: flake8 api/
+
+  deploy-to-vercel:
+    needs: python-formatting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-action@v20
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
