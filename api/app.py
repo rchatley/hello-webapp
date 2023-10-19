@@ -12,7 +12,7 @@ def process_query(query):
     if "dinosaurs" in query:
         return "Dinosaurs ruled the Earth 200 million years ago"
     else:
-        return "unknown"
+        return "Unknown"
 
 
 @app.route("/query")
