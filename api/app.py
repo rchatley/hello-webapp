@@ -9,8 +9,8 @@ def hello_world():
 
 
 def process_query(query):
-    if "name" in query:
-        return "Rob"
+    if "dinosaurs" in query:
+        return "Dinosaurs ruled the Earth 200 million years ago"
     else:
         return "unknown"
 
