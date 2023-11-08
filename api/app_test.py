@@ -7,7 +7,7 @@ def test_knows_about_dinosaurs():
 
 
 def test_knows_team_name():
-    assert process_query("What is your name?") == "Robert"
+    assert process_query("What is your name?") == "Trinity"
 
 
 def test_does_not_know_about_asteroids():
