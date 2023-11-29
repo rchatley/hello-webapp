@@ -1,11 +1,13 @@
 from flask import Flask, request, render_template
+import os
 
 app = Flask(__name__)
 
 
 @app.route("/")
 def hello_world():
-    return render_template("index.html")
+    apikey = os.getenv('API_KEY')
+    return render_template("index.html", key=apikey)
 
 
 def process_query(query):
@@ -15,6 +17,12 @@ def process_query(query):
         return "Dublin"
     else:
         return "Unknown"
+
+
+@app.route("/apikey")
+def apikey():
+    api_key = os.getenv('API_KEY')
+    return "Your API key is " + api_key
 
 
 @app.route("/query")
